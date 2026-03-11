@@ -4,4 +4,4 @@ metadata:
   name: mongodb-config
   namespace: bookcamp
 data:
-  database_url: mongodb://admin:password@mongodb:27017/bookcamp?authSource=admin
+  database_url: mongodb://mongodb:mongodbpass@mongodb:27017/bookcamp?authSource=admin
