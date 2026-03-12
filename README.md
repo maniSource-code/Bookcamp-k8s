@@ -1,5 +1,7 @@
-📚 BookCamp Kubernetes Deployment
+# 📚 BookCamp Kubernetes Deployment
+
 A **containerized Node.js + MongoDB application deployed on Kubernetes** using **Minikube** for local development.
+
 This project demonstrates a **real-world DevOps workflow** including Docker images, Kubernetes deployments, services, configuration management, and persistent storage.
 
 ---
@@ -234,7 +236,9 @@ Mongo-Express:
 
 ---
 
-# 🛠 Useful Kubernetes Commands Check all resources: ``` kubectl get all -n bookcamp ```
+# 🛠 Useful Kubernetes Commands 
+
+Check all resources: ``` kubectl get all -n bookcamp ```
 
 View logs: ``` kubectl logs deployment/nodejs -n bookcamp ``` 
 
@@ -268,7 +272,7 @@ Delete namespace and its components in it: ```kubectl delete namespace bookcamp`
 
 ---
 
-### NOTE: foe detailed project overview see [Document.pdf](Document.pdf)
+### NOTE: for more detailed project see [Document.pdf](Document.pdf)
 
 ---
 
