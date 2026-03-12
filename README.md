@@ -76,6 +76,7 @@ Kubernetes Architecture Flow:
 
 ### ConfigMap Stores configuration values used by the application. 
 Example: ``` MongoDB connection string Application environment variables ``` 
+
 ``` configmap.yaml ```
 
 Note: change the MONGO_URL with your custom URL
@@ -84,6 +85,7 @@ Note: change the MONGO_URL with your custom URL
 
 ### Secrets Stores sensitive data such as: 
 ``` MongoDB username MongoDB password Docker registry credentials ```
+
 ``` secret.yaml ``` 
 
 Note: use base64 encoded values only
@@ -92,6 +94,7 @@ Note: use base64 encoded values only
 
 ### MongoDB Deployment Deploys MongoDB container with persistent storage.
 ``` mongodb-deployment.yaml ```
+
 Includes: - MongoDB container 
           - Persistent Volume Claim 
           - Secret-based authentication 
@@ -100,12 +103,14 @@ Includes: - MongoDB container
 
 ### MongoDB Service Creates an internal service so other pods can connect to MongoDB. 
 ``` mongodb-service.yaml ``` 
+
 Service Type: ``` ClusterIP ``` 
 
 ---
 
 ### Node.js Deployment Deploys the BookCamp application.
 ``` nodejs-deployment.yaml ```
+
 Features: - 2 replicas
           - environment variables from ConfigMap 
           - container port 5000 
@@ -114,6 +119,7 @@ Features: - 2 replicas
 
 ### Node.js Service Exposes the Node.js application to external users.
 ``` nodejs-service.yaml ``` 
+
 Service Type: ``` NodePort ``` 
 
 ---
@@ -130,6 +136,7 @@ Service Type: ``` NodePort ```
 
 ### Persistent Storage Defines storage used by MongoDB.
 ``` storage.yaml ```
+
 Uses: ``` PersistentVolumeClaim ``` 
 
 ---
@@ -192,7 +199,8 @@ kubectl apply -f mongoexpress-service.yaml
 ---
 
 # 🔎 Verify Deployment Check pods: 
-``` kubectl get pods -n bookcamp ``` 
+``` kubectl get pods -n bookcamp ```
+
 Check services: ``` kubectl get svc -n bookcamp ``` 
 
 ---
@@ -209,12 +217,12 @@ default browsers will open the application
 or
 
 ``` minikube ip ``` 
-### Node.js Application ``` http://<minikube-ip>:30007 ``` 
-### Mongo Express UI ``` http://<minikube-ip>:30008 ``` 
+### Node.js Application -  ``` http://<minikube-ip>:30007 ``` 
+### Mongo Express UI -  ``` http://<minikube-ip>:30008 ``` 
 
 ---
 
-### OUTPUT-Screenshots
+## OUTPUT-Screenshots
 
 Nodejs application:
 
@@ -226,9 +234,12 @@ Mongo-Express:
 
 ---
 
-# 🛠 Useful Kubernetes Commands Check all resources: ``` kubectl get all -n bookcamp ``` 
+# 🛠 Useful Kubernetes Commands Check all resources: ``` kubectl get all -n bookcamp ```
+
 View logs: ``` kubectl logs deployment/nodejs -n bookcamp ``` 
+
 Describe pod: ``` kubectl describe pod <pod-name> -n bookcamp ``` 
+
 Delete namespace and its components in it: ```kubectl delete namespace bookcamp```
 
 ---
