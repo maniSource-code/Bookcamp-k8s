@@ -41,8 +41,12 @@ bookcamp-k8s/
 ├── storage.yaml
 │
 ├── images
-│     └── architecture1.png
+│     ├── architecture1.png
 │     └── architecture2.png
+│
+├── screenshots
+│     ├── output1.png
+│     └── output2.png
 │
 ├── Document.pdf
 │
